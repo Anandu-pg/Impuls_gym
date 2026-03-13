@@ -741,42 +741,6 @@ ul {
   flex-wrap: wrap;
 }
 
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gray);
-  animation: bounce 2s ease-in-out infinite;
-  z-index: 100;
-}
-
-.scroll-arrow {
-  width: 20px;
-  height: 20px;
-  border-right: 2px solid var(--red);
-  border-bottom: 2px solid var(--red);
-  transform: rotate(45deg);
-}
-
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(8px);
-  }
-}
 
 /* ==============================
    ABOUT SECTION
