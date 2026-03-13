@@ -104,22 +104,25 @@ function animateCounter(el, target, duration = 2000) {
 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.animated) {
-            entry.target.dataset.animated = 'true';
-            // Hero stats
-            document.querySelectorAll('.hero-stat-num').forEach(el => {
-                animateCounter(el, parseInt(el.dataset.target), 1800);
-            });
-            // Section stats
-            document.querySelectorAll('.counter').forEach(el => {
-                animateCounter(el, parseInt(el.dataset.target), 2200);
+        if (entry.isIntersecting) {
+            const container = entry.target;
+            if (container.dataset.animated) return;
+            container.dataset.animated = 'true';
+            
+            container.querySelectorAll('.hero-stat-num, .counter').forEach(el => {
+                const target = parseInt(el.dataset.target);
+                if (!isNaN(target)) {
+                    animateCounter(el, target, 2000);
+                }
             });
         }
     });
-}, { threshold: 0.3 });
+}, { threshold: 0.1 });
 
-const statsSection = document.querySelector('.stats-row');
-if (statsSection) counterObserver.observe(statsSection);
+document.querySelectorAll('.hero-stats, .stats-row').forEach(el => {
+    counterObserver.observe(el);
+});
+
 
 // ---- Active Nav Link Highlighting ----
 const sections = document.querySelectorAll('section[id]');
