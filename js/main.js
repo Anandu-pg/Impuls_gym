@@ -253,6 +253,47 @@ if (typeof Swiper !== 'undefined') {
     });
 }
 
+// ---- Transformations Swiper (Mobile Only) ----
+if (typeof Swiper !== 'undefined') {
+    new Swiper('.transformations-swiper', {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+            el: '.transformations-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            // On desktop, show as grid
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                allowTouchMove: false,
+                autoplay: false,
+            }
+        },
+        on: {
+            init: function () {
+                if (window.innerWidth >= 992) {
+                    this.autoplay.stop();
+                }
+            },
+            resize: function () {
+                if (window.innerWidth >= 992) {
+                    this.autoplay.stop();
+                } else {
+                    this.autoplay.start();
+                }
+            }
+        }
+    });
+}
+
 if (typeof GLightbox !== 'undefined') {
     // Equipment lightbox
     GLightbox({

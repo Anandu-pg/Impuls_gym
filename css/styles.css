@@ -1233,8 +1233,16 @@ ul {
   position: relative;
   overflow: hidden;
   aspect-ratio: 3/4;
-  max-height: 280px;
+  width: 100%;
 }
+
+@media (max-width: 768px) {
+  .trainer-img-wrapper {
+    aspect-ratio: auto;
+    height: 350px;
+  }
+}
+
 
 .trainer-img-wrapper img {
   width: 100%;
@@ -2465,4 +2473,51 @@ ul {
     margin: 0 !important;
   }
 }
+
+/* Transformations Section Swiper Adjustments */
+.transformations-swiper {
+  padding-bottom: 50px;
+}
+
+.transformations-pagination {
+  bottom: 0 !important;
+}
+
+.transformations-pagination .swiper-pagination-bullet {
+  background: var(--red);
+  opacity: 0.3;
+}
+
+.transformations-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 20px;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .transformations-swiper .swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    transform: none !important;
+    width: auto !important;
+  }
+  
+  .transformations-pagination {
+    display: none !important;
+  }
+  
+  .transformations-swiper .swiper-slide {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 991px) {
+  #testimonials {
+    display: none !important;
+  }
+}
+
 
