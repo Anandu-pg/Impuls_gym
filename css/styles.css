@@ -2424,4 +2424,45 @@ ul {
     height: auto !important;
     margin: 0 !important;
   }
-}
+}
+
+/* Trainers Section Swiper Adjustments */
+.trainers-swiper {
+  padding-bottom: 50px;
+}
+
+.trainers-pagination {
+  bottom: 0 !important;
+}
+
+.trainers-pagination .swiper-pagination-bullet {
+  background: var(--red);
+  opacity: 0.3;
+}
+
+.trainers-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 20px;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .trainers-swiper .swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px !important;
+    transform: none !important;
+    width: auto !important;
+  }
+  
+  .trainers-pagination {
+    display: none !important;
+  }
+  
+  .trainers-swiper .swiper-slide {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+}
+

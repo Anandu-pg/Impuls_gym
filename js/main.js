@@ -212,7 +212,47 @@ if (typeof Swiper !== 'undefined') {
 }
 
 
-// ---- GLightbox ----
+// ---- Expert Trainers Swiper (Mobile Only) ----
+if (typeof Swiper !== 'undefined') {
+    new Swiper('.trainers-swiper', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+            el: '.trainers-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            // On desktop, show as grid
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                allowTouchMove: false,
+                autoplay: false,
+            }
+        },
+        on: {
+            init: function () {
+                if (window.innerWidth >= 992) {
+                    this.autoplay.stop();
+                }
+            },
+            resize: function () {
+                if (window.innerWidth >= 992) {
+                    this.autoplay.stop();
+                } else {
+                    this.autoplay.start();
+                }
+            }
+        }
+    });
+}
+
 if (typeof GLightbox !== 'undefined') {
     // Equipment lightbox
     GLightbox({
