@@ -2173,6 +2173,14 @@ ul {
     font-size: 1.4rem;
   }
 
+  .call-float {
+    bottom: 20px;
+    left: 20px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+
   .back-to-top {
     bottom: 85px;
     right: 20px;
