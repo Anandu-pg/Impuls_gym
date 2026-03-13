@@ -2165,23 +2165,35 @@ ul {
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
+  }
+
+  .footer-links-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
   .footer-top {
-    padding: 40px 0;
+    padding: 30px 0;
   }
 
   .footer-brand .footer-logo {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .footer-brand > p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
   }
 
   .footer-links h4, .footer-contact h4 {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 6px;
   }
 
 
