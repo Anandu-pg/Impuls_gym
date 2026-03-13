@@ -52,6 +52,10 @@
     <i class="fab fa-whatsapp"></i>
     <span class="whatsapp-tooltip">Chat with us!</span>
   </a>
+  <a href="tel:+919999999999" class="call-float" aria-label="Call us">
+    <i class="fas fa-phone"></i>
+    <span class="call-tooltip">Call now!</span>
+  </a>
 
   <!-- ===== NAVIGATION ===== -->
   <nav id="navbar" class="navbar">
@@ -64,6 +68,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
+        <button class="nav-close" id="navClose" aria-label="Close menu">&times;</button>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#equipment" class="nav-link">Equipment</a></li>
         <li><a href="#programs" class="nav-link">Programs</a></li>
@@ -353,95 +358,110 @@
         <h2 class="section-title">TRAINING <span class="gradient-text">PROGRAMS</span></h2>
         <p class="section-desc">Scientifically designed programs for every goal, fitness level, and lifestyle.</p>
       </div>
-      <div class="programs-grid">
+      <div class="swiper programs-swiper reveal">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="program-card">
+              <div class="program-icon"><i class="fas fa-user-ninja"></i></div>
+              <h3>Personal Training</h3>
+              <p>One-on-one customized coaching with certified trainers. Personalized workout plans, nutrition guidance, and
+                continuous progress tracking.</p>
+              <ul class="program-features">
+                <li><i class="fas fa-check"></i> Custom workout plans</li>
+                <li><i class="fas fa-check"></i> Nutrition counseling</li>
+                <li><i class="fas fa-check"></i> Weekly assessments</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%91%A4%0A%0AI%20am%20enquiring%20about%20your%20%2APERSONAL%20TRAINING%2A%20program.%20Please%20share%20the%20details!"
+                target="_blank" class="program-btn">Enquire Now</a>
+            </div>
+          </div>
 
-        <div class="program-card reveal">
-          <div class="program-icon"><i class="fas fa-user-ninja"></i></div>
-          <h3>Personal Training</h3>
-          <p>One-on-one customized coaching with certified trainers. Personalized workout plans, nutrition guidance, and
-            continuous progress tracking.</p>
-          <ul class="program-features">
-            <li><i class="fas fa-check"></i> Custom workout plans</li>
-            <li><i class="fas fa-check"></i> Nutrition counseling</li>
-            <li><i class="fas fa-check"></i> Weekly assessments</li>
-          </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%91%A4%0A%0AI%20am%20enquiring%20about%20your%20%2APERSONAL%20TRAINING%2A%20program.%20Please%20share%20the%20details!"
-            target="_blank" class="program-btn">Enquire Now</a>
+          <div class="swiper-slide">
+            <div class="program-card featured-program">
+              <div class="program-badge">Most Popular</div>
+              <div class="program-icon"><i class="fas fa-fire-flame-curved"></i></div>
+              <h3>Weight Loss Program</h3>
+              <p>Science-backed fat loss protocols combining HIIT, strength training, and metabolic conditioning for maximum
+                calorie burn.</p>
+              <ul class="program-features">
+                <li><i class="fas fa-check"></i> HIIT & Cardio circuits</li>
+                <li><i class="fas fa-check"></i> Diet planning</li>
+                <li><i class="fas fa-check"></i> Body composition tracking</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%94%A5%0A%0AI%20am%20enquiring%20about%20your%20%2AWEIGHT%20LOSS%20PROGRAM%2A.%20Please%20share%20the%20details!"
+                target="_blank" class="program-btn">Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="program-card">
+              <div class="program-icon"><i class="fas fa-dumbbell"></i></div>
+              <h3>Muscle Building</h3>
+              <p>Progressive hypertrophy programs designed to maximize muscle mass, strength and physical development
+                through proven methodologies.</p>
+              <ul class="program-features">
+                <li><i class="fas fa-check"></i> Hypertrophy protocols</li>
+                <li><i class="fas fa-check"></i> Supplement guidance</li>
+                <li><i class="fas fa-check"></i> Periodization planning</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%8F%8B%EF%B8%8F%E2%80%8D%E2%99%82%EF%B8%8F%0A%0AI%20am%20enquiring%20about%20your%20%2AMUSCLE%20BUILDING%2A%20program.%20Please%20share%20the%20details!"
+                target="_blank" class="program-btn">Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="program-card">
+              <div class="program-icon"><i class="fas fa-weight-hanging"></i></div>
+              <h3>Strength Training</h3>
+              <p>Build raw power through powerlifting-based training, focusing on squat, bench, deadlift, and accessory
+                movements.</p>
+              <ul class="program-features">
+                <li><i class="fas fa-check"></i> Powerlifting techniques</li>
+                <li><i class="fas fa-check"></i> Form & technique coaching</li>
+                <li><i class="fas fa-check"></i> Competition prep available</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%E2%9A%99%EF%B8%8F%0A%0AI%20am%20enquiring%20about%20your%20%2ASTRENGTH%20TRAINING%2A%20program.%20Please%20share%20the%20details!"
+                target="_blank" class="program-btn">Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="program-card">
+              <div class="program-icon"><i class="fas fa-medal"></i></div>
+              <h3>Competition Prep</h3>
+              <p>Elite-level preparation for bodybuilding and physique competitions. Peak week protocols, posing practice,
+                and stage-ready programs.</p>
+              <ul class="program-features">
+                <li><i class="fas fa-check"></i> Stage conditioning</li>
+                <li><i class="fas fa-check"></i> Posing coaching</li>
+                <li><i class="fas fa-check"></i> Peaking strategies</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%8F%86%0A%0AI%20am%20enquiring%20about%20your%20%2ACOMPETITION%20PREP%2A%20program.%20Please%20share%20the%20details!"
+                target="_blank" class="program-btn">Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="program-card">
+              <div class="program-icon"><i class="fas fa-people-group"></i></div>
+              <h3>Group Classes</h3>
+              <p>High-energy group sessions including Zumba, circuit training, core blaster, and functional fitness for all
+                levels.</p>
+              <ul class="program-features">
+                <li><i class="fas fa-check"></i> Zumba & Dance fitness</li>
+                <li><i class="fas fa-check"></i> Circuit training</li>
+                <li><i class="fas fa-check"></i> Core & flexibility</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%91%A5%0A%0AI%20am%20enquiring%20about%20your%20%2AGROUP%20CLASSES%2A.%20Please%20share%20the%20details!"
+                target="_blank" class="program-btn">Enquire Now</a>
+            </div>
+          </div>
+
         </div>
-
-        <div class="program-card reveal featured-program">
-          <div class="program-badge">Most Popular</div>
-          <div class="program-icon"><i class="fas fa-fire-flame-curved"></i></div>
-          <h3>Weight Loss Program</h3>
-          <p>Science-backed fat loss protocols combining HIIT, strength training, and metabolic conditioning for maximum
-            calorie burn.</p>
-          <ul class="program-features">
-            <li><i class="fas fa-check"></i> HIIT & Cardio circuits</li>
-            <li><i class="fas fa-check"></i> Diet planning</li>
-            <li><i class="fas fa-check"></i> Body composition tracking</li>
-          </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%94%A5%0A%0AI%20am%20enquiring%20about%20your%20%2AWEIGHT%20LOSS%20PROGRAM%2A.%20Please%20share%20the%20details!"
-            target="_blank" class="program-btn">Enquire Now</a>
-        </div>
-
-        <div class="program-card reveal">
-          <div class="program-icon"><i class="fas fa-dumbbell"></i></div>
-          <h3>Muscle Building</h3>
-          <p>Progressive hypertrophy programs designed to maximize muscle mass, strength and physical development
-            through proven methodologies.</p>
-          <ul class="program-features">
-            <li><i class="fas fa-check"></i> Hypertrophy protocols</li>
-            <li><i class="fas fa-check"></i> Supplement guidance</li>
-            <li><i class="fas fa-check"></i> Periodization planning</li>
-          </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%8F%8B%EF%B8%8F%E2%80%8D%E2%99%82%EF%B8%8F%0A%0AI%20am%20enquiring%20about%20your%20%2AMUSCLE%20BUILDING%2A%20program.%20Please%20share%20the%20details!"
-            target="_blank" class="program-btn">Enquire Now</a>
-        </div>
-
-        <div class="program-card reveal">
-          <div class="program-icon"><i class="fas fa-weight-hanging"></i></div>
-          <h3>Strength Training</h3>
-          <p>Build raw power through powerlifting-based training, focusing on squat, bench, deadlift, and accessory
-            movements.</p>
-          <ul class="program-features">
-            <li><i class="fas fa-check"></i> Powerlifting techniques</li>
-            <li><i class="fas fa-check"></i> Form & technique coaching</li>
-            <li><i class="fas fa-check"></i> Competition prep available</li>
-          </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%E2%9A%99%EF%B8%8F%0A%0AI%20am%20enquiring%20about%20your%20%2ASTRENGTH%20TRAINING%2A%20program.%20Please%20share%20the%20details!"
-            target="_blank" class="program-btn">Enquire Now</a>
-        </div>
-
-        <div class="program-card reveal">
-          <div class="program-icon"><i class="fas fa-medal"></i></div>
-          <h3>Competition Prep</h3>
-          <p>Elite-level preparation for bodybuilding and physique competitions. Peak week protocols, posing practice,
-            and stage-ready programs.</p>
-          <ul class="program-features">
-            <li><i class="fas fa-check"></i> Stage conditioning</li>
-            <li><i class="fas fa-check"></i> Posing coaching</li>
-            <li><i class="fas fa-check"></i> Peaking strategies</li>
-          </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%8F%86%0A%0AI%20am%20enquiring%20about%20your%20%2ACOMPETITION%20PREP%2A%20program.%20Please%20share%20the%20details!"
-            target="_blank" class="program-btn">Enquire Now</a>
-        </div>
-
-        <div class="program-card reveal">
-          <div class="program-icon"><i class="fas fa-people-group"></i></div>
-          <h3>Group Classes</h3>
-          <p>High-energy group sessions including Zumba, circuit training, core blaster, and functional fitness for all
-            levels.</p>
-          <ul class="program-features">
-            <li><i class="fas fa-check"></i> Zumba & Dance fitness</li>
-            <li><i class="fas fa-check"></i> Circuit training</li>
-            <li><i class="fas fa-check"></i> Core & flexibility</li>
-          </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Impulse%20Fitness%20Club!%20%F0%9F%91%A5%0A%0AI%20am%20enquiring%20about%20your%20%2AGROUP%20CLASSES%2A.%20Please%20share%20the%20details!"
-            target="_blank" class="program-btn">Enquire Now</a>
-        </div>
-
+        <!-- Add Pagination -->
+        <div class="swiper-pagination programs-pagination"></div>
       </div>
-    </div>
+
   </section>
 
   <!-- ===== EXPERT TRAINERS ===== -->
