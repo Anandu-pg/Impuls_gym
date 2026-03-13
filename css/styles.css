@@ -361,8 +361,8 @@ ul {
    ============================== */
 .call-float {
   position: fixed;
-  bottom: 100px;
-  right: 30px;
+  bottom: 30px;
+  left: 30px;
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--red), var(--red-dark));
@@ -378,6 +378,7 @@ ul {
   display: none; /* Only on mobile */
 }
 
+
 @keyframes call-pulse {
   0%, 100% { box-shadow: 0 5px 25px rgba(227, 6, 19, 0.4); }
   50% { box-shadow: 0 5px 40px rgba(227, 6, 19, 0.6), 0 0 0 10px rgba(227, 6, 19, 0.1); }
@@ -385,7 +386,7 @@ ul {
 
 .call-tooltip {
   position: absolute;
-  right: 70px;
+  left: 70px;
   background: var(--red-dark);
   color: #fff;
   padding: 6px 14px;
@@ -396,6 +397,7 @@ ul {
   pointer-events: none;
   transition: opacity 0.3s;
 }
+
 
 .call-float:hover .call-tooltip {
   opacity: 1;
