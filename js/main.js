@@ -8,10 +8,18 @@ window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
         if (preloader) {
             preloader.classList.add('hidden');
+            
+            // Trigger Hero Counters immediately after preloader starts hiding
+            const heroStats = document.querySelector('.hero-stats');
+            if (heroStats) {
+                setTimeout(() => triggerCounters(heroStats), 400);
+            }
+            
             setTimeout(() => { preloader.remove(); }, 600);
         }
     }, 1900);
 });
+
 
 // ---- Navbar Scroll ----
 const navbar = document.getElementById('navbar');
@@ -87,41 +95,47 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ---- Counter Animation ----
 function animateCounter(el, target, duration = 2000) {
-    let start = 0;
-    const speed = 25; // Even faster (was 50)
-    const updateCount = () => {
-        const count = +el.textContent.replace(/,/g, '');
-        const inc = Math.max(1, target / speed);
-        if (count < target) {
-            el.textContent = Math.ceil(count + inc).toLocaleString();
-            setTimeout(updateCount, 5); // 5ms timeout for high speed
+    let startTimestamp = null;
+    const startValue = 0;
+    
+    function step(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentValue = Math.floor(progress * (target - startValue) + startValue);
+        el.textContent = currentValue.toLocaleString();
+        
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
         } else {
             el.textContent = target.toLocaleString();
         }
-    };
-    updateCount(); // Initial call to start the animation
+    }
+    window.requestAnimationFrame(step);
+}
+
+// Function to trigger counters in a container
+function triggerCounters(container) {
+    if (container.dataset.animated) return;
+    container.dataset.animated = 'true';
+    container.querySelectorAll('.hero-stat-num, .counter').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        if (!isNaN(target)) animateCounter(el, target, 2000);
+    });
 }
 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const container = entry.target;
-            if (container.dataset.animated) return;
-            container.dataset.animated = 'true';
-            
-            container.querySelectorAll('.hero-stat-num, .counter').forEach(el => {
-                const target = parseInt(el.dataset.target);
-                if (!isNaN(target)) {
-                    animateCounter(el, target, 2000);
-                }
-            });
+            triggerCounters(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll('.hero-stats, .stats-row').forEach(el => {
+// Observe section stats only (Hero will be triggered by preloader)
+document.querySelectorAll('.stats-row').forEach(el => {
     counterObserver.observe(el);
 });
+
 
 
 // ---- Active Nav Link Highlighting ----
