@@ -10,10 +10,15 @@ window.addEventListener('load', () => {
             preloader.classList.add('hidden');
             
             // Trigger Hero Counters immediately after preloader starts hiding
-            const heroStats = document.querySelector('.hero-stats');
-            if (heroStats) {
-                setTimeout(() => triggerCounters(heroStats), 400);
-            }
+            document.querySelectorAll('.hero-stat-num').forEach(el => {
+                setTimeout(() => {
+                    if (!el.dataset.animated) {
+                        el.dataset.animated = 'true';
+                        animateCounter(el, parseInt(el.dataset.target), 2000);
+                    }
+                }, 400);
+            });
+
             
             setTimeout(() => { preloader.remove(); }, 600);
         }
@@ -126,15 +131,23 @@ function triggerCounters(container) {
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            triggerCounters(entry.target);
+            const el = entry.target;
+            if (el.dataset.animated) return;
+            el.dataset.animated = 'true';
+            
+            const target = parseInt(el.dataset.target);
+            if (!isNaN(target)) {
+                animateCounter(el, target, 2000);
+            }
         }
     });
 }, { threshold: 0.15 });
 
-// Observe section stats only (Hero will be triggered by preloader)
-document.querySelectorAll('.stats-row').forEach(el => {
+// Observe each stat number individually for most reliable triggering
+document.querySelectorAll('.hero-stat-num, .counter').forEach(el => {
     counterObserver.observe(el);
 });
+
 
 
 
